@@ -25,8 +25,9 @@ Resume PDF dataset in the `resumes` directory provided by Kaggle: https://www.ka
 
 ### Setup
 
-* Create virtual env
+* Create virtual env and activate
   * `python -m venv venv`
+  * `source venv/bin/activate`
 * Import requirements
   * `pip install -r requirements.txt`
 * Launch Docker, then set up an ES cluster locally at `localhost:9200`:
