@@ -131,7 +131,6 @@ def jsonl_to_es(jsonl_path: str = "parser_output.jsonl", index_name: str = "resu
 
                 document = add_years_experience(document)
                 try:
-                    # res = insert_document(es, index_name, document)
                     response = es.index(index=index_name, id=document["id"], body=document)
                     document_count += 1
                 except Exception as e:
@@ -140,19 +139,6 @@ def jsonl_to_es(jsonl_path: str = "parser_output.jsonl", index_name: str = "resu
                     continue
                 print(f"Document ID {document['id']}: {response['result']}")
         print(f"Indexing complete: {document_count} / {document_count + failure_count} documents indexed.")
-                
-
-# def insert_document(es, index_name, document):
-#     """Inserts a document into an ES index"""
-    
-#     # Final sanity check on document size
-#     if len(document) > 5:
-#         print(f"ERROR {len(document)}")
-#         for x in document:
-#             print(x)
-#         print(document)
-#     res = es.index(index=index_name, id=document["id"], body=document)
-#     return res
 
 if __name__ == "__main__":
     jsonl_to_es()
