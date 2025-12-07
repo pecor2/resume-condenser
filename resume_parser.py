@@ -83,21 +83,6 @@ def parse_resume(path: str = "resumes/", output: str = "parser_output.jsonl") ->
 
         # Check if file is PDF and process it
         if file.endswith(".pdf") and os.path.isfile(os.path.join(path, file)):
-            # REMOVE THIS WHEN SUBNITTING
-            #KIHGDKJGDKJDGHKJDG
-            #KIHGDKJGDKJDGHKJDG
-            #KIHGDKJGDKJDGHKJDG
-            #KIHGDKJGDKJDGHKJDG
-            #KIHGDKJGDKJDGHKJDG
-            #KIHGDKJGDKJDGHKJDG
-            #KIHGDKJGDKJDGHKJDG
-            #KIHGDKJGDKJDGHKJDG
-            #KIHGDKJGDKJDGHKJDG
-            #KIHGDKJGDKJDGHKJDG
-            print(count)
-            count += 1
-            if count <= 1640:
-                continue
             file_path = os.path.join(path, file)
             text = extract_text_from_pdf(file_path)
             json_str = text_to_json(text, file[:-4])
